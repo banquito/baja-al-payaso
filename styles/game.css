@@ -4,25 +4,30 @@
 }
 
 #game div {
-	position: relative;
-	height: 145px;
-	width: 140px;
+	position: absolute;
+	width: 72px;
+	height: 95px;
 }
 
 #game div img.balloon {
 	position: absolute;
+	bottom:0px;
+	-webkit-transform-origin: center bottom;
+	-moz-transform-origin: center bottom;
+	-o-transform-origin: center bottom;   
 }
 
 #game div img.boom {
 	display: none;
 	position: absolute;
-	top: -51px;
-	left: -70px;
+	top: -12px;
+	left: -54px;
+	width: 120px;
 }
 
 #game div img.splash {
 	display: none;
 	position: absolute;
-	top: -52px;
+	top: -21px;
 	left: -52px;
 }
