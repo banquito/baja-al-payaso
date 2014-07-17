@@ -1,0 +1,28 @@
+#game {
+	width: 400px;
+	height: 400px;
+}
+
+#game div {
+	position: relative;
+	height: 145px;
+	width: 140px;
+}
+
+#game div img.balloon {
+	position: absolute;
+}
+
+#game div img.boom {
+	display: none;
+	position: absolute;
+	top: -51px;
+	left: -70px;
+}
+
+#game div img.splash {
+	display: none;
+	position: absolute;
+	top: -52px;
+	left: -52px;
+}
