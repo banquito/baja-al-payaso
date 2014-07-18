@@ -1,14 +1,16 @@
 var Ballon = function(number, $game) {
     var id = 'balloon' + number;
-    var $balloon = $('<img src="images/balloon' + number + '.png" class="balloon">');
-    var $boom = $('<img src="images/boom' + number + '.png" class="boom">');
-    var $splash = $('<img src="images/splash_balloon.png" class="splash">');
-
-    var $container = $('<div id="' + id + '"></div>');
-    $container.append($balloon);
-    $container.append($splash);
-    $container.append($boom);
-
+    var $number = $('#number' + number);
+    var $balloon = $('#' + id + ' img.balloon');
+    var $boom = $('#' + id + ' img.boom');
+    var $splash = $('#' + id + ' img.splash');
+    var $container = $('#' + id);
+    
+    var init = function() {
+        $balloon.css('width', '18px');
+        $number.click(expand);
+    }
+    
     var boom = function() {
         $balloon.hide();
 
@@ -32,13 +34,6 @@ var Ballon = function(number, $game) {
             .end(boom);
     };
 
-    this.draw = function(x, y) {
-        $container.css('left', x + 'px');
-        $container.css('top', y + 'px');
-        $balloon.css('width', '18px');
-        $balloon.click(expand);
-        $game.append($container);
-    };
-
+    init();
     return this;
 }
