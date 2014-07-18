@@ -1,33 +1,115 @@
 #game {
-	width: 400px;
-	height: 400px;
+    width: 400px;
+    height: 400px;
+}
+#game #balloon1 {
+    top: 100px;
+    left: 100px;
+}
+#game #balloon2 {
+    top: 100px;
+    left: 200px;
+}
+#game #balloon3 {
+    top: 100px;
+    left: 300px;
+}
+#game #balloon4 {
+    top: 100px;
+    left: 400px;
+}
+#game #balloon5 {
+    top: 100px;
+    left: 500px;
+}
+#game div.balloon {
+    position: absolute;
+    width: 72px;
+    height: 95px;
+}
+#game div.balloon {
+    position: absolute;
+    width: 72px;
+    height: 95px;
+}
+#game div.balloon img.balloon {
+    position: absolute;
+    bottom: 0px;
+    -webkit-transform-origin: center bottom;
+    -moz-transform-origin: center bottom;
+    -o-transform-origin: center bottom;
+}
+#game div.balloon img.boom {
+    display: none;
+    position: absolute;
+    top: -12px;
+    left: -54px;
+    width: 120px;
+}
+#game div.balloon img.splash {
+    display: none;
+    position: absolute;
+    top: -21px;
+    left: -52px;
+}
+#game div.number {
+    position: absolute;
+    top: 250px;
 }
 
-#game div {
-	position: absolute;
-	width: 72px;
-	height: 95px;
+#game div.number div {
+    position: absolute;
+    width: 53px;
+    height: 52px;
 }
 
-#game div img.balloon {
-	position: absolute;
-	bottom:0px;
-	-webkit-transform-origin: center bottom;
-	-moz-transform-origin: center bottom;
-	-o-transform-origin: center bottom;   
+@-webkit-keyframes outline {
+  	0% {
+    	-webkit-transform: scale(1);
+  	}
+  	50% {
+	    -webkit-transform: scale(1.3);
+  	}
+  	100% {
+    	-webkit-transform: scale(1);
+  	}
 }
 
-#game div img.boom {
-	display: none;
-	position: absolute;
-	top: -12px;
-	left: -54px;
-	width: 120px;
+#game div.number div:first-child {
+    opacity: 0.5;
 }
 
-#game div img.splash {
-	display: none;
-	position: absolute;
-	top: -21px;
-	left: -52px;
+#game div.number:hover div:first-child {
+    -webkit-animation: outline 1s infinite;
+}
+
+#game #number1 {
+    left: 100px;
+}
+#game #number1 div {
+    background-image: url('../images/number1.png');
+}
+#game #number2 {
+    left: 200px;
+}
+#game #number2 div {
+    background-image: url('../images/number2.png');
+}
+#game #number3 {
+    left: 300px;
+}
+#game #number3 div {
+    background-image: url('../images/number3.png');
+}
+#game #number4 {
+    left: 400px;
+}
+#game #number4 div {
+    background-image: url('../images/number4.png');
+}
+#game #number5 {
+    left: 500px;
+}
+#game #number5 div {
+    background-image: url('../images/number5.png');
 }
