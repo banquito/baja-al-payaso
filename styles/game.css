@@ -1,6 +1,7 @@
 #game {
     width: 700px;
     height: 400px;
+    position: relative;
 }
 #game #clown {
     position: absolute;
@@ -9,27 +10,27 @@
 #game #guns {
     position: absolute;
     bottom:0px;
-    left: 148px;
+    left: 132px;
 }
 #game #balloon1 {
     bottom: 193px;
-    left: 79px;
+    left: 71px;
 }
 #game #balloon2 {
     bottom: 204px;
-    left: 215px;
+    left: 207px;
 }
 #game #balloon3 {
     bottom: 209px;
-    left: 350px;
+    left: 342px;
 }
 #game #balloon4 {
     bottom: 205px;
-    left: 485px;
+    left: 477px;
 }
 #game #balloon5 {
     bottom: 193px;
-    left: 619px;
+    left: 611px;
 }
 #game div.balloon {
     position: absolute;
@@ -88,31 +89,31 @@
 }
 
 #game #number1 {
-    left: 167px;
+    left: 151px;
 }
 #game #number1 div {
     background-image: url('../images/number1.png');
 }
 #game #number2 {
-    left: 257px;
+    left: 246px;
 }
 #game #number2 div {
     background-image: url('../images/number2.png');
 }
 #game #number3 {
-    left: 335px;
+    left: 319px;
 }
 #game #number3 div {
     background-image: url('../images/number3.png');
 }
 #game #number4 {
-    left: 417px;
+    left: 401px;
 }
 #game #number4 div {
     background-image: url('../images/number4.png');
 }
 #game #number5 {
-    left: 505px;
+    left: 489px;
 }
 #game #number5 div {
     background-image: url('../images/number5.png');
