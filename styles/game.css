@@ -118,3 +118,44 @@
 #game #number5 div {
     background-image: url('../images/number5.png');
 }
+#game .drown {
+    position: absolute;
+    background-repeat: no-repeat;
+}
+#game #drown1 {
+    width: 0px;
+    height: 125px;
+    right: 521px;
+    bottom: 0px;
+    background-image: url('../images/splash1.png');
+    background-position-x: right;
+}
+#game #drown2 {
+    width: 0px;
+    height: 132px;
+    right: 431px;
+    bottom: 16px;
+    background-image: url('../images/splash2.png');
+    background-position-x: right;
+}
+#game #drown3 {
+    width: 43px;
+    height: 0px;
+    left: 323px;
+    bottom: 82px;
+    background-image: url('../images/splash3.png');
+}
+#game #drown4 {
+    width: 0px;
+    height: 137px;
+    left: 437px;
+    bottom: 5px;
+    background-image: url('../images/splash4.png');
+}
+#game #drown5 {
+    width: 0px;
+    height: 125px;
+    left: 516px;
+    bottom: 0px;
+    background-image: url('../images/splash5.png');
+}
