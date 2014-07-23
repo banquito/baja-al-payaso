@@ -39,7 +39,6 @@ var Ballon = function(number, drownAnimation, game) {
     var expand = function(hasToBoom) {
         return function() {
             var scaleTo = (hasToBoom) ? 4: 3;
-            console.log(scaleTo);
             move('#' + id + ' img.balloon')
             .scale(scaleTo)
             .end(boom(hasToBoom));
