@@ -1,7 +1,9 @@
 #game {
     width: 700px;
-    height: 400px;
+    height: 350px;
     position: relative;
+    background-image: url('../images/background_select.png');
+    background-repeat: no-repeat;
 }
 #game #clown {
     position: absolute;
@@ -158,4 +160,9 @@
     left: 516px;
     bottom: 0px;
     background-image: url('../images/splash5.png');
+}
+#game #chooseGun {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
 }
