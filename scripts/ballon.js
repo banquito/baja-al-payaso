@@ -1,4 +1,4 @@
-var Ballon = function(number, drownAnimation, $game) {
+var Ballon = function(number, drownAnimation, game) {
     var id = 'balloon' + number;
     var $number = $('#number' + number);
     var $balloon = $('#' + id + ' img.balloon');
@@ -10,19 +10,25 @@ var Ballon = function(number, drownAnimation, $game) {
     var init = function() {
         $balloon.css('width', '18px');
         //$number.click(expand);
-        $number.click(drown);
+        $number.click(function() {
+            game.drown(number);
+        });
     }
     
-    var boom = function() {
-        $balloon.hide();
+    var boom = function(hasToBoom) {
+        return function() {
+            if (hasToBoom) {
+                $balloon.hide();
 
-        $splash.fadeIn('fast');
+                $splash.fadeIn('fast');
 
-        $boom.fadeIn('fast', function() {
-            move('#' + id + ' img.boom')
-                .scale(1.2)
-                .end(hide);
-        });
+                $boom.fadeIn('fast', function() {
+                    move('#' + id + ' img.boom')
+                        .scale(1.2)
+                        .end(hide);
+                });
+            }
+        }
     };
 
     var hide = function() {
@@ -30,13 +36,17 @@ var Ballon = function(number, drownAnimation, $game) {
         $boom.fadeOut('slow');
     };
 
-    var expand = function() {
-        move('#' + id + ' img.balloon')
-            .scale(4)
-            .end(boom);
+    var expand = function(hasToBoom) {
+        return function() {
+            var scaleTo = (hasToBoom) ? 4: 3;
+            console.log(scaleTo);
+            move('#' + id + ' img.balloon')
+            .scale(scaleTo)
+            .end(boom(hasToBoom));
+        }
     };
 
-    var drown = function() {
+    this.drown = function(hasToBoom) {
         move('#drown' + number)
             .add(drownAnimation.property, drownAnimation.value)
             .duration('1s')
@@ -69,7 +79,7 @@ var Ballon = function(number, drownAnimation, $game) {
                                         .sub(drownAnimation.property, drownAnimation.value)
                                         .duration('0.5s')
                                         .ease('in')
-                                        .then(expand)
+                                        .then(expand(hasToBoom))
                                     .pop()
                                 .pop()
                             .pop()

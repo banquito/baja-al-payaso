@@ -1,6 +1,4 @@
-var Game = function(gameElement) {
-	var $game = $(gameElement)
-	
+var Game = function() {
 	var moveBalloons = function() {
 		var duration = '0.3s'
 		move('#balloons')
@@ -52,14 +50,23 @@ var Game = function(gameElement) {
 		});
 	};
 
+	var balloons = [];
+
 	this.start = function() {
-		var ballon1 = new Ballon(1, { property: 'width', value: 110 }, $game);
-		var ballon1 = new Ballon(2, { property: 'width', value: 68 }, $game);
-		var ballon1 = new Ballon(3, { property: 'height', value: 58 }, $game);
-		var ballon1 = new Ballon(4, { property: 'width', value: 55 }, $game);
-		var ballon1 = new Ballon(5, { property: 'width', value: 110 }, $game);
+		balloons.push(new Ballon(1, { property: 'width', value: 110 }, this));
+		balloons.push(new Ballon(2, { property: 'width', value: 68 }, this));
+		balloons.push(new Ballon(3, { property: 'height', value: 58 }, this));
+		balloons.push(new Ballon(4, { property: 'width', value: 55 }, this));
+		balloons.push(new Ballon(5, { property: 'width', value: 110 }, this));
 
 		moveBalloons();
 		moveClowns(showNumbers);
 	};
+
+	this.drown = function (number) {
+		for (var i = 0; i < balloons.length; i++) {
+			hasToBoom = (i + 1 == number);
+			balloons[i].drown(hasToBoom);	
+		}
+	}
 }
