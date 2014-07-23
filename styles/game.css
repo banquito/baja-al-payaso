@@ -4,6 +4,11 @@
     position: relative;
     background-image: url('../images/background_select.png');
     background-repeat: no-repeat;
+    overflow: hidden;
+}
+#game #clowns {
+    position: absolute;
+    bottom: -250px;
 }
 #game #clown {
     position: absolute;
@@ -62,6 +67,7 @@
 #game div.number {
     position: absolute;
     bottom: 63px;
+    display: none;
 }
 
 #game div.number div {
@@ -165,4 +171,9 @@
     position: absolute;
     bottom: 10px;
     right: 20px;
+}
+#game #balloons {
+    position: absolute;
+    top: -114px;
+    left: 195px;
 }
