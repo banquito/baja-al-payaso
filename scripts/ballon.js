@@ -40,8 +40,9 @@ var Ballon = function(number, drownAnimation, game) {
         return function() {
             var scaleTo = (hasToBoom) ? 4: 3;
             move('#' + id + ' img.balloon')
-            .scale(scaleTo)
-            .end(boom(hasToBoom));
+                .duration('3.4s')
+                .scale(scaleTo)
+                .end(boom(hasToBoom));
         }
     };
 
@@ -78,16 +79,14 @@ var Ballon = function(number, drownAnimation, game) {
                                         .sub(drownAnimation.property, drownAnimation.value)
                                         .duration('0.5s')
                                         .ease('in')
-                                        .then(expand(hasToBoom))
                                     .pop()
                                 .pop()
                             .pop()
                         .pop()
                     .pop()
                 .pop()
-                
             .pop()
-            .end();
+            .end(expand(hasToBoom));
     };
 
     init();
