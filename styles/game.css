@@ -1,4 +1,5 @@
 #game {
+    display: none;
     width: 700px;
     height: 350px;
     position: relative;
@@ -176,4 +177,73 @@
     position: absolute;
     top: -114px;
     left: 195px;
+}
+#welcome {
+    width: 700px;
+    height: 350px;
+    position: relative;
+    overflow: hidden;
+    background-image: url('../images/bg.png');
+    background-repeat: no-repeat;
+}
+#welcome.light {
+    background-image: url('../images/background_light.png');
+}
+#welcome #background {
+    width: 700px;
+    height: 350px;
+    position: absolute;
+    top: 0px
+    left: 0px;
+    opacity: 0.5;
+    background-color: #000;
+}
+#welcome #flight-balloons {
+    position: absolute;
+    bottom: -420px;
+    left: 214px;
+}
+#welcome #prize {
+    position: absolute;
+    top: 126px;
+    left: 128px;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transform: scale(2,1.5);
+    transform: scale(2,1.5);
+    display: none;
+}
+#welcome #splash {
+    position: absolute;
+    top: 102px;
+    left: 53px;
+    display: none;
+}
+#welcome #ribbon-back {
+    position: absolute;
+    top: 117px;
+    left: 240px;
+    display: none;
+}
+
+#welcome #ribbon1 {
+    position: absolute;
+    top: 76px;
+    right: 254px;
+    width: 0px;
+    height: 84px;
+    background-image: url('../images/ribbon-1.png');
+    background-position-x: right;
+    background-repeat: no-repeat;
+}
+
+#welcome #ribbon2 {
+    position: absolute;
+    top: 209px;
+    left: 236px;
+    width: 0px;
+    height: 84px;
+    background-image: url('../images/ribbon-2.png');
+    background-position-x: left;
+    background-repeat: no-repeat;
 }
