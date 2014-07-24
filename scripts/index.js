@@ -3,11 +3,12 @@ $(function() {
     welcome.start();
     
     $('#welcome').click(function(){
-    	$('#welcome').hide();
-    	$('#game').show();
-    	window.setTimeout(function() {
-    		var game = new Game();
-    		game.start();
-    	}, 100);
+    	$('#welcome').fadeOut(function() {
+    		$('#game').fadeIn();
+	    	window.setTimeout(function() {
+	    		var game = new Game();
+	    		game.start();
+	    	}, 100);
+    	});
     });
 });
