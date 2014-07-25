@@ -2,7 +2,7 @@ $(function() {
     var welcome = new Welcome();
     welcome.start();
     
-    $('#welcome').click(function(){
+    $('#welcome-you .button').click(function(){
     	$('#welcome').fadeOut(function() {
     		$('#game').fadeIn();
 	    	window.setTimeout(function() {

@@ -1,5 +1,5 @@
 var Welcome = function() {
-	
+
 	var ligthBackground = function() {
 		move('#background')
 		  	.duration('1s')
@@ -7,28 +7,28 @@ var Welcome = function() {
 		  	.end();
 	}
 
-	var moveBalloons = function(next) {
-		move('#flight-balloons')
-		  	.duration('1s')
-		  	.ease('in-out')
-		  	.translate(0, -420)
-		  	.then()
-		  		.duration('1s')
-		  		.ease('in-out')
-		  		.translate(0, 50)
-		  		.then(next)
-		  	.pop()
-		  	.end();
+	var moveBalloons = function() {
+		return new Promise(function() {
+			move('#flight-balloons')
+			  	.duration('1s')
+			  	.ease('in-out')
+			  	.translate(0, -420)
+			  	.then()
+			  		.duration('1s')
+			  		.ease('in-out')
+			  		.translate(0, 50)
+			  		.then(showPrize)
+			  	.pop()
+			  	.end();
+		});
 	}
 
-	var showPrize = function(next) {
-		return function() {
-			$('#prize').fadeIn('fast', function() {
-				move('#prize')
-					.scale(1)
-					.end(next);
-			});
-		}
+	var showPrize = function() {
+		$('#prize').fadeIn('fast', function() {
+			move('#prize')
+				.scale(1)
+				.end(showSplash);
+		});
 	};
 
 	var showSplash = function() {
@@ -39,7 +39,6 @@ var Welcome = function() {
 
 	var showRibbon = function() {
 		$('#ribbon-back').fadeIn(function() {
-			console.log('hola');
 			move('#ribbon1')
             	.add('width', 209)
             	.duration('0.5s')
@@ -49,12 +48,19 @@ var Welcome = function() {
             	.add('width', 209)
             	.duration('0.5s')
             	.ease('in')
-            	.end();
+            	.end(showWelcome);
 		});
+	};
+
+	var showWelcome = function() {
+		window.setTimeout(function() {
+    		$('#welcome-you').fadeIn();
+    	}, 1000);
 	};
 
 	this.start = function() {
 		ligthBackground();
-		moveBalloons(showPrize(showSplash));
+		moveBalloons();
 	};
+
 }
