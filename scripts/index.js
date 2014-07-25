@@ -1,14 +1,17 @@
 $(function() {
     var welcome = new Welcome();
-    welcome.start();
     
-    $('#welcome-you .button').click(function(){
-    	$('#welcome').fadeOut(function() {
-    		$('#game').fadeIn();
-	    	window.setTimeout(function() {
-	    		var game = new Game();
-	    		game.start();
-	    	}, 100);
-    	});
-    });
+    var goToBye = function() {
+        var bye = new Bye();
+        bye.start();
+    };
+
+    var goToGame = function(){
+        var game = new Game();
+        game.start();
+        game.click(goToBye)
+    };
+
+    welcome.start();
+    welcome.click(goToGame);        
 });

@@ -9,7 +9,7 @@ var Welcome = function() {
 
 	var moveBalloons = function() {
 		return new Promise(function() {
-			move('#flight-balloons')
+			move('#welcome .flight-balloons')
 			  	.duration('1s')
 			  	.ease('in-out')
 			  	.translate(0, -420)
@@ -63,4 +63,11 @@ var Welcome = function() {
 		moveBalloons();
 	};
 
+	this.click = function(next) {
+		$('#welcome-you .button').click(function() {
+			$('#welcome').fadeOut(function() {
+	            next();
+	        });
+		});
+	};
 }

@@ -53,14 +53,18 @@ var Game = function() {
 	var balloons = [];
 
 	this.start = function() {
-		balloons.push(new Ballon(1, { property: 'width', value: 110 }, this));
-		balloons.push(new Ballon(2, { property: 'width', value: 68 }, this));
-		balloons.push(new Ballon(3, { property: 'height', value: 58 }, this));
-		balloons.push(new Ballon(4, { property: 'width', value: 55 }, this));
-		balloons.push(new Ballon(5, { property: 'width', value: 110 }, this));
+		$('#game').fadeIn();
+		var game = this;
+        window.setTimeout(function() {
+            balloons.push(new Ballon(1, { property: 'width', value: 110 }, game));
+			balloons.push(new Ballon(2, { property: 'width', value: 68 }, game));
+			balloons.push(new Ballon(3, { property: 'height', value: 58 }, game));
+			balloons.push(new Ballon(4, { property: 'width', value: 55 }, game));
+			balloons.push(new Ballon(5, { property: 'width', value: 110 }, game));
 
-		moveBalloons();
-		moveClowns(showNumbers);
+			moveBalloons();
+			moveClowns(showNumbers);
+        }, 100);
 	};
 
 	this.drown = function (number) {
@@ -68,5 +72,15 @@ var Game = function() {
 			hasToBoom = (i + 1 == number);
 			balloons[i].drown(hasToBoom);	
 		}
+		var game = this;
+		window.setTimeout(function() {
+			$('#game').fadeOut(function() {
+				game.next();
+			});
+		}, 6000);
 	}
+
+	this.click = function(next) {
+		this.next = next;
+	};
 }

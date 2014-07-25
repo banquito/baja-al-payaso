@@ -198,7 +198,7 @@
     opacity: 0.5;
     background-color: #000;
 }
-#welcome #flight-balloons {
+#welcome .flight-balloons {
     position: absolute;
     bottom: -420px;
     left: 214px;
@@ -284,4 +284,36 @@
     margin-left: 152px;
     height: 26px;
     background: transparent;
+}
+
+#bye {
+    width: 700px;
+    height: 350px;
+    position: relative;
+    overflow: hidden;
+    background-image: url('../images/bg.png');
+    background-repeat: no-repeat;
+    display: none;
+}
+
+#bye .flight-balloons {
+    position: absolute;
+    bottom: -160px;
+    left: 214px;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transform: scale(1.5,1.5);
+    transform: scale(1.5,1.5);
+}
+
+#bye #way {
+    position: absolute;
+    left: 178px;
+    top: 106px;
+}
+
+#bye #keep {
+    position: absolute;
+    left: 80px;
+    top: 166px;
 }
