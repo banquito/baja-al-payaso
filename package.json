@@ -1,0 +1,22 @@
+{
+  "name": "baja-al-payaso",
+  "version": "0.0.0",
+  "description": "baja-al-payaso ==============",
+  "main": "index.html",
+  "dependencies": {
+    "nib": "~1.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/banquito/baja-al-payaso.git"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/banquito/baja-al-payaso/issues"
+  }
+}

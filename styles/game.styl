@@ -270,6 +270,28 @@
   left: 5px;
   top: 5px;
 
+
+.pulse-grow
+  display: inline-block;
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  animation-name: pulse-grow;
+  animation-duration: 0.2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+
+.pulse-grow-slow
+  animation-name: pulse-grow;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+
+@keyframes pulse-grow
+  to
+    transform: scale(1.1);
+
 @keyframes outline
   0%
     transform: scale(1);
