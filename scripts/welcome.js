@@ -8,20 +8,18 @@ var Welcome = function() {
 	}
 
 	var moveBalloons = function() {
-		return new Promise(function() {
 			move('#welcome .flight-balloons')
-			  	.duration('1s')
-			  	.ease('in-out')
-			  	.translate(0, -420)
-			  	.then()
-			  		.duration('1s')
-			  		.ease('in-out')
-			  		.translate(0, 50)
-			  		.then(showPrize)
-			  	.pop()
-			  	.end();
-		});
-	}
+		  	.duration('1s')
+		  	.ease('in-out')
+		  	.translate(0, -420)
+		  	.then()
+		  		.duration('1s')
+		  		.ease('in-out')
+		  		.translate(0, 50)
+		  		.then(showPrize)
+		  	.pop()
+		  	.end();
+	};
 
 	var showPrize = function() {
 		$('#prize').fadeIn('fast', function() {
